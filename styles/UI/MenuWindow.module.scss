@@ -34,6 +34,12 @@
   gap: 1rem;
 
   .menuLink {
+    filter: blur(0px);
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: blur(10px);
+    }
     span {
       font-size: 1rem;
     }

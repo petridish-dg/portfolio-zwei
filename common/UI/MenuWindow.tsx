@@ -6,6 +6,8 @@ import MiddleDash from "../components/MiddleDash";
 import Footer from "./Footer";
 import s from "/styles/UI/MenuWindow.module.scss";
 
+const MotionLink = m(Link);
+
 const menuLinks = [
   {
     name: "Home/",
@@ -23,17 +25,74 @@ const menuLinks = [
 
 const MenuWindow = () => {
   const menuVariants = {
-    open: {
-      y: "-100%",
+    closed: {
+      y: "-100vh",
+      opacity: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
+        ease: "easeInOut",
+        when: "afterChildren",
+        staggerChildren: 0.2,
+      },
+    },
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const linkContainerVariants = {
+    closed: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+    open: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const linkVariants = {
+    closed: {
+      opacity: 0,
+      x: -20,
+      transition: {
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
-    closed: {
-      y: "0%",
+    open: {
+      opacity: 1,
+      x: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const FooterVariants = {
+    closed: {
+      opacity: 0,
+      y: 20,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
@@ -48,19 +107,21 @@ const MenuWindow = () => {
       exit="closed"
     >
       <m.div className={s.menuWindowLockUp}>
-        <m.div className={s.menuWindowWrapper}>
+        <m.div className={s.menuWindowWrapper} variants={linkContainerVariants}>
           {menuLinks.map((link, index) => (
-            <Link
-              key={index}
+            <MotionLink
               className={`${s.menuLink} h1-style`}
+              key={index}
               href={link.link}
+              whileHover={{ x: 10 }}
+              variants={linkVariants}
             >
               {link.name}
               <span className="mono">0{index + 1}</span>
-            </Link>
+            </MotionLink>
           ))}
         </m.div>
-        <m.div className={s.menuWindowWrapper}>
+        <m.div className={s.menuWindowWrapper} variants={linkVariants}>
           <button>
             <p className="h1-style">
               START A PROJECT <span className="mono">↴</span>
@@ -75,7 +136,7 @@ const MenuWindow = () => {
           </m.div>
         </m.div>
       </m.div>
-      <m.div className={s.menuWindowFooter}>
+      <m.div className={s.menuWindowFooter} variants={FooterVariants}>
         <Footer contain={false} />
       </m.div>
     </m.div>

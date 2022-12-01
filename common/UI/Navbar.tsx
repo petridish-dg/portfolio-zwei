@@ -34,7 +34,7 @@ const Navbar = () => {
           </p>
         </div>
         <div className={s.navRight}>
-          <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+          <MenuButton menuHandler={() => setIsOpen(!isOpen)} open={isOpen}/>
         </div>
       </nav>
       <AnimatePresence>{isOpen && <MenuWindow />}</AnimatePresence>

@@ -1,8 +1,9 @@
-import React from 'react';
-import s from '/styles/Home.module.scss';
+import React from "react";
+
+import s from "/styles/Home.module.scss";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <section className="container"></section>;
 };
 
 export default Home;
