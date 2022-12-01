@@ -1,4 +1,4 @@
-import { AnimatePresence, motion as m } from "framer-motion";
+import { motion as m } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -38,9 +38,6 @@ const Menu = () => {
           <m.div className={s.buttonCircle}></m.div>
         </m.div>
       </button>
-      <AnimatePresence>
-        <MenuWindow />
-      </AnimatePresence>
     </>
   );
 };

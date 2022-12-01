@@ -4,6 +4,7 @@ import React from "react";
 import { ModuleDetectionKind } from "typescript";
 
 import Menu from "./Menu";
+import MenuWindow from "./MenuWindow";
 import globe from "/public/images/UI/globe.svg";
 import s from "/styles/UI/Navbar.module.scss";
 
@@ -27,6 +28,7 @@ const Navbar = () => {
       <div className={s.navRight}>
         <Menu />
       </div>
+        <MenuWindow/>
     </nav>
   );
 };

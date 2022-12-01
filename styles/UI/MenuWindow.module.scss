@@ -7,11 +7,14 @@
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 40;
+
+  padding-top: 12rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  text-transform: uppercase;
 
   background-color: $background;
 }
