@@ -6,7 +6,7 @@ import MenuWindow from "./MenuWindow";
 import cross from "/public/images/UI/cross.svg";
 import s from "/styles/UI/Menu.module.scss";
 
-const Menu = () => {
+const MenuButton = () => {
   const buttonVariants = {
     open: {
       rotate: 135,
@@ -42,4 +42,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuButton;
