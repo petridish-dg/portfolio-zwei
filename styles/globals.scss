@@ -20,12 +20,24 @@ body {
 
 .mono {
   font-family: input-mono, monospace !important;
-  
 }
 
 h1,
 .h1-style {
   font-family: neue-haas-grotesk-display, sans-serif;
-  font-size: 7rem;
+  font-size: 6rem;
   line-height: 0.85;
+}
+
+h2,
+.h2-style {
+  font-family: aw-conqueror-didot, serif;
+  font-size: 3rem;
+  line-height: .95;
+}
+
+h3,
+.h3-style {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 1.25rem;
 }
