@@ -3,20 +3,24 @@ import React from "react";
 import s from "/styles/UI/Footer.module.scss";
 
 type Props = {
-  contain: string;
+  contain: boolean;
 };
 
 const Footer = ({ contain }: Props) => {
   return (
-    <footer className={contain === "true" ? "container" : ""}>
+    <footer
+      className={`${contain === true ? "container" : ""} ${s.footerContainer}`}
+    >
       <div className={s.footerWrapper}>
         <p>
-          © 2022
+          DESIGNED + DEVELOPED
           <br />
-          DESIGNED + DEVELOPED BY PETER.DG
+          BY PETER.DG
         </p>
       </div>
-      <div className={s.footerWrapper}></div>
+      <div className={s.footerWrapper}>
+        <p> © 2022</p>
+      </div>
     </footer>
   );
 };

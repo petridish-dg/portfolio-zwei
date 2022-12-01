@@ -10,7 +10,6 @@ body {
   color: $text;
 
   font-family: input-mono, monospace;
-  
 }
 
 .container {
@@ -19,7 +18,14 @@ body {
 
 // ! typography
 
-h1, .h1-style {
+.mono {
+  font-family: input-mono, monospace !important;
+  
+}
+
+h1,
+.h1-style {
   font-family: neue-haas-grotesk-display, sans-serif;
-  font-size: 8rem;
+  font-size: 7rem;
+  line-height: 0.85;
 }

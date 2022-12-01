@@ -1,14 +1,16 @@
-import { motion as m } from "framer-motion";
+import { AnimatePresence, motion as m } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { ModuleDetectionKind } from "typescript";
 
-import MenuButton from "./Menu";
+import MenuButton from "./MenuButton";
 import MenuWindow from "./MenuWindow";
 import globe from "/public/images/UI/globe.svg";
 import s from "/styles/UI/Navbar.module.scss";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <nav className={`${s.navContainer} container`}>
@@ -18,7 +20,12 @@ const Navbar = () => {
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           >
-            <Image src={globe} alt="rotating globe icon" height={35} width={35}/>
+            <Image
+              src={globe}
+              alt="rotating globe icon"
+              height={35}
+              width={35}
+            />
           </m.div>
           <p>
             OPEN FOR ANY
@@ -27,10 +34,10 @@ const Navbar = () => {
           </p>
         </div>
         <div className={s.navRight}>
-          <MenuButton />
+          <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </nav>
-          <MenuWindow/>
+      <AnimatePresence>{isOpen && <MenuWindow />}</AnimatePresence>
     </>
   );
 };

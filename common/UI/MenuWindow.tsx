@@ -1,45 +1,83 @@
 import { motion as m } from "framer-motion";
 import Link from "next/link";
-import React from "react";
-import Footer from "./Footer";
+import React, { useState } from "react";
 
+import MiddleDash from "../components/MiddleDash";
+import Footer from "./Footer";
 import s from "/styles/UI/MenuWindow.module.scss";
 
 const menuLinks = [
   {
-    name: "Home",
+    name: "Home/",
     link: "/",
   },
   {
-    name: "Works",
+    name: "Works/",
     link: "/",
   },
   {
-    name: "About",
+    name: "About/",
     link: "/about",
   },
 ];
 
 const MenuWindow = () => {
+  const menuVariants = {
+    open: {
+      y: "-100%",
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+    closed: {
+      y: "0%",
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <m.div className={`${s.menuWindowContainer} container`}>
-      <div className={s.menuWindowLockUp}>
-        <div className={s.menuWindowWrapper}>
-          <ul className={s.menulinkList}>
-            {menuLinks.map((link) => (
-              <li key={link.name}>
-                <Link href={link.link} className="h1-style">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={s.menuWindowWrapper}>
-          <p>contact</p>
-        </div>
-      </div>
-      <Footer />
+    <m.div
+      className={`${s.menuWindowContainer} container`}
+      variants={menuVariants}
+      initial="closed"
+      animate="open"
+      exit="closed"
+    >
+      <m.div className={s.menuWindowLockUp}>
+        <m.div className={s.menuWindowWrapper}>
+          {menuLinks.map((link, index) => (
+            <Link
+              key={index}
+              className={`${s.menuLink} h1-style`}
+              href={link.link}
+            >
+              {link.name}
+              <span className="mono">0{index + 1}</span>
+            </Link>
+          ))}
+        </m.div>
+        <m.div className={s.menuWindowWrapper}>
+          <button>
+            <p className="h1-style">
+              START A PROJECT <span className="mono">↴</span>
+            </p>
+          </button>
+          <MiddleDash textOne="GET IN TOUCH">
+            <p> mail@peterdg.com </p>
+          </MiddleDash>
+          <m.div className={s.socialLinks}>
+            <Link href={"/"}>LINKEDIN</Link>
+            <Link href={"/"}>INSTAGRAM</Link>
+          </m.div>
+        </m.div>
+      </m.div>
+      <m.div className={s.menuWindowFooter}>
+        <Footer contain={false} />
+      </m.div>
     </m.div>
   );
 };
