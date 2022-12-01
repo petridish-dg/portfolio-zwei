@@ -1,0 +1,15 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  .globe {
+    height: 35px;
+    width: 35px;
+  }
+}
