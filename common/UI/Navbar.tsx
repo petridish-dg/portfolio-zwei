@@ -1,7 +1,6 @@
-import { AnimatePresence, motion as m } from "framer-motion";
+import { AnimatePresence, motion as m, useScroll } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
-import { ModuleDetectionKind } from "typescript";
 
 import MenuButton from "./MenuButton";
 import MenuWindow from "./MenuWindow";
@@ -10,6 +9,8 @@ import s from "/styles/UI/Navbar.module.scss";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
@@ -30,11 +31,11 @@ const Navbar = () => {
           <p>
             OPEN FOR ANY
             <br />
-            COLLABOORATIONS AND OFFERS
+            COLLABORATIONS AND OFFERS
           </p>
         </div>
         <div className={s.navRight}>
-          <MenuButton menuHandler={() => setIsOpen(!isOpen)} open={isOpen}/>
+          <MenuButton menuHandler={() => setIsOpen(!isOpen)} open={isOpen} />
         </div>
       </nav>
       <AnimatePresence>{isOpen && <MenuWindow />}</AnimatePresence>

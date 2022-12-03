@@ -2,6 +2,7 @@ import { motion as m } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 
+import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 import MiddleDash from "../components/MiddleDash";
 import Footer from "./Footer";
 import s from "/styles/UI/MenuWindow.module.scss";
@@ -24,6 +25,8 @@ const menuLinks = [
 ];
 
 const MenuWindow = () => {
+  useLockBodyScroll();
+
   const menuVariants = {
     closed: {
       y: "-100vh",
@@ -135,6 +138,9 @@ const MenuWindow = () => {
             <Link href={"/"}>INSTAGRAM</Link>
           </m.div>
         </m.div>
+        <div className={s.menuWindowWrapper}>
+          <button>GET IN TOUCH</button>
+        </div>
       </m.div>
       <m.div className={s.menuWindowFooter} variants={FooterVariants}>
         <Footer contain={false} />

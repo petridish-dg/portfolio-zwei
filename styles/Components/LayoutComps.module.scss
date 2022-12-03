@@ -18,10 +18,18 @@
 
     &:nth-child(2) {
       text-align: center;
+
+      @media (max-width: $mobile) {
+        text-align: right;
+      }
     }
 
     &:last-child {
       text-align: right;
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
   }
 }

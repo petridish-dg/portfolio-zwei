@@ -7,6 +7,8 @@ import lightningR from "/public/images/UI/lightningRight.svg";
 import s from "/styles/pages/Home.module.scss";
 
 const Home = () => {
+ 
+
   const heroContent = {
     one: "Chicago, IL",
     two: "Portfolio ( 2020 - 2022 )",
@@ -18,9 +20,9 @@ const Home = () => {
       <section className={`${s.backGround}`}>
         <div className={`${s.heroSection} container`}>
           <h1 className={s.heroTitle}>
-            I AM PETER DE GUZMAN
+            PETER DE GUZMAN
             <br />
-            MULTIDISCIPLINARY DESIGNER
+            FREELANCE GRAPHIC ARTIST
           </h1>
           <div className={s.heroSubTitle}>
             <Image src={lightningL} alt="lightning" />
@@ -42,6 +44,7 @@ const Home = () => {
           <h1>ABOUT</h1>
         </div>
       </section>
+      <section style={{ height: "500vh" }}></section>
     </>
   );
 };

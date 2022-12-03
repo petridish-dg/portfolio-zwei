@@ -8,18 +8,30 @@
   flex-direction: column;
   gap: 4rem;
 
-  .heroTitle {
+  overflow: hidden;
+
+  @media (max-width: $mobile) {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    padding-top: 20vh;
+  }
+}
+
+.heroTitle {
+  text-align: center;
+}
+
+.heroSubTitle {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  h2 {
     text-align: center;
   }
 
-  .heroSubTitle {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    h2 {
-      text-align: center;
-    }
+  img {
+    display: none;
   }
 }
 
@@ -33,6 +45,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
 
   z-index: -10;

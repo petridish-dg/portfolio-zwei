@@ -3,6 +3,14 @@
 
 :root {
   --padding-global: 2rem;
+
+  @media (max-width: $tablet) {
+    --padding-global: 1.5rem;
+  }
+
+  @media (max-width: $mobile) {
+    --padding-global: 1rem;
+  }
 }
 
 ::selection {
@@ -23,6 +31,13 @@ body {
 
 // ! typography
 
+p,
+a {
+  @media (max-width: $mobile) {
+    font-size: $font-small;
+  }
+}
+
 .mono {
   font-family: input-mono, monospace !important;
 }
@@ -31,7 +46,15 @@ h1,
 .h1-style {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-size: 6rem;
-  line-height: 0.85;
+  line-height: 0.9;
+
+  @media (max-width: $tablet) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 2.4rem;
+  }
 }
 
 h2,
@@ -39,10 +62,18 @@ h2,
   font-family: aw-conqueror-didot, serif;
   font-size: 3rem;
   line-height: 0.95;
+
+  @media (max-width: $mobile) {
+    font-size: 2rem;
+  }
 }
 
 h3,
 .h3-style {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-size: 1.25rem;
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+  }
 }
