@@ -1,0 +1,27 @@
+@import "/styles/variables.scss";
+
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-top: 3rem;
+
+  text-transform: uppercase;
+
+  h3 {
+    flex: 1;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
