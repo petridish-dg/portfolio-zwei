@@ -31,7 +31,7 @@ const MenuWindow = () => {
       transition: {
         duration: 0.5,
         ease: "easeInOut",
-        when: "afterChildren",
+        // when: "afterChildren",
         staggerChildren: 0.2,
       },
     },

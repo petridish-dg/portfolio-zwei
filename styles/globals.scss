@@ -5,6 +5,11 @@
   --padding-global: 2rem;
 }
 
+::selection {
+  background-color: $text;
+  color: $background;
+}
+
 body {
   background-color: $background;
   color: $text;
@@ -33,7 +38,7 @@ h2,
 .h2-style {
   font-family: aw-conqueror-didot, serif;
   font-size: 3rem;
-  line-height: .95;
+  line-height: 0.95;
 }
 
 h3,
