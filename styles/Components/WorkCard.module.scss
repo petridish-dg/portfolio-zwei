@@ -1,0 +1,51 @@
+@import "styles/variables";
+
+.cardContainer {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.cardImageContainer {
+  max-height: 75vh;
+  position: relative;
+
+  border-radius: 0.5rem;
+  border: 1px solid $text;
+
+  overflow: hidden;
+
+  aspect-ratio: 1/1;
+}
+
+.scopeContainer {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scope {
+  background-color: $background;
+  color: $text;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cardImage {
+  position: relative;
+
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardTitle {
+  h2 {
+    font-family: $font-sans !important;
+  }
+}

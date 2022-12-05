@@ -62,6 +62,17 @@
   opacity: 0.025;
 }
 
+.workSection {
+  padding: 5rem 0;
+}
+
+.workContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .contactSection {
   height: 40rem;
+  padding-top: 8rem;
 }

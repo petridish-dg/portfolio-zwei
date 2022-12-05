@@ -16,8 +16,8 @@ const Contact = () => {
         <p> mail@peterdg.com </p>
       </MiddleDash>
       <m.div className={s.socialLinks}>
-        <Link href={"/"}>LINKEDIN</Link>
-        <Link href={"/"}>INSTAGRAM</Link>
+        <Link href={"/"}>LINKEDIN ↗ </Link>
+        <Link href={"/"}>INSTAGRAM ↗ </Link>
       </m.div>
     </div>
   )

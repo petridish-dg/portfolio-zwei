@@ -3,6 +3,9 @@ import React from "react";
 
 import Contact from "../common/UI/Contact";
 import { SpreadThree } from "../common/components/LayoutComps";
+import WorkCard from "../common/components/WorkCard";
+import WorkGallery from "../common/components/WorkGallery";
+import { worksData } from "../public/data/worksData";
 import lightningL from "/public/images/UI/lightningLeft.svg";
 import lightningR from "/public/images/UI/lightningRight.svg";
 import s from "/styles/pages/Home.module.scss";
@@ -44,12 +47,21 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className={s.aboutSection}>
+      {/* <section className={s.aboutSection}>
         <div className="container">
           <h1>WORKS</h1>
         </div>
+      </section> */}
+      <section className={s.workSection}>
+        <div className={`${s.workContainer} container`}>
+          <h2 className="h1-style">WORKS</h2>
+          <WorkGallery>
+            {worksData.map((item, index) => (
+              <WorkCard key={index} {...item} />
+            ))}
+          </WorkGallery>
+        </div>
       </section>
-      <section style={{ height: "500vh" }}></section>
       <section className={`${s.contactSection} container`}>
         <Contact />
       </section>
