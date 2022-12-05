@@ -1,0 +1,12 @@
+.contactContainer {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 3rem;
+}

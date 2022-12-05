@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 import MiddleDash from "../components/MiddleDash";
+import Contact from "./Contact";
 import Footer from "./Footer";
 import s from "/styles/UI/MenuWindow.module.scss";
 
@@ -125,18 +126,7 @@ const MenuWindow = () => {
           ))}
         </m.div>
         <m.div className={s.menuWindowWrapper} variants={linkVariants}>
-          <button>
-            <p className="h1-style">
-              START A PROJECT <span className="mono">↴</span>
-            </p>
-          </button>
-          <MiddleDash textOne="GET IN TOUCH">
-            <p> mail@peterdg.com </p>
-          </MiddleDash>
-          <m.div className={s.socialLinks}>
-            <Link href={"/"}>LINKEDIN</Link>
-            <Link href={"/"}>INSTAGRAM</Link>
-          </m.div>
+         <Contact />
         </m.div>
         <div className={s.menuWindowWrapper}>
           <button>GET IN TOUCH</button>

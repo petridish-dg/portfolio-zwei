@@ -1,14 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
+import Contact from "../common/UI/Contact";
 import { SpreadThree } from "../common/components/LayoutComps";
 import lightningL from "/public/images/UI/lightningLeft.svg";
 import lightningR from "/public/images/UI/lightningRight.svg";
 import s from "/styles/pages/Home.module.scss";
 
 const Home = () => {
- 
-
   const heroContent = {
     one: "Chicago, IL",
     two: "Portfolio ( 2020 - 2022 )",
@@ -35,16 +34,25 @@ const Home = () => {
           </div>
           <SpreadThree {...heroContent} />
           <div className={s.heroFooter}>
-            <p>this is what i do</p>
+            <p>
+              Designer Specialized in Digital Solutions & Graphic Identities.
+              <br />
+              Brand identity → UI design → Poster.
+              <br />
+              More is More.
+            </p>
           </div>
         </div>
       </section>
       <section className={s.aboutSection}>
         <div className="container">
-          <h1>ABOUT</h1>
+          <h1>WORKS</h1>
         </div>
       </section>
       <section style={{ height: "500vh" }}></section>
+      <section className={`${s.contactSection} container`}>
+        <Contact />
+      </section>
     </>
   );
 };
