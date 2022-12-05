@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .workGallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6,5 +8,13 @@
 
     a:last-child {
         grid-column: span 2;
+
+        @media (max-width: $mobile) {
+            grid-column: span 1;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
     }
 }
